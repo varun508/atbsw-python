@@ -1,0 +1,25 @@
+import random, sys
+
+number = random.randint(1, 20)
+
+found = False
+c = 3
+while not found and c > 0:
+
+    inp = int(input("Take a guess(" + str(c) + " chances left): "))
+
+    if inp == 100:
+        sys.exit()
+    if inp == number:
+        found = True
+        print("Yay! You won.")
+
+    elif inp > number:
+        c = c - 1
+        print("It was too high")
+    else:
+        c = c - 1
+        print("It was too low")
+
+if c == 0:
+    print("You ran out of chances")
